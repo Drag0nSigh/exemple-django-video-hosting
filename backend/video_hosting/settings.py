@@ -62,7 +62,11 @@ DATABASES = {
         'NAME': os.getenv('POSTGRES_DB', 'django'),
         'USER': os.getenv('POSTGRES_USER', 'django'),
         'PASSWORD': os.getenv('POSTGRES_PASSWORD', 'password'),
+<<<<<<< HEAD
         'HOST': os.getenv('DB_HOST', 'localhost'),
+=======
+        'HOST': os.getenv('DB_HOST', ''),
+>>>>>>> origin/main
         'PORT': os.getenv('DB_PORT', 5432)
     }
 }
@@ -98,8 +102,11 @@ MEDIA_ROOT = '/app/media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+<<<<<<< HEAD
 AUTH_USER_MODEL = 'users.User'
 
+=======
+>>>>>>> origin/main
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
