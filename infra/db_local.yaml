@@ -1,13 +1,13 @@
 version: '3.3'
 
 volumes:
-  pg:
+  pg_video_host:
 
 services:
   db_local:
     image: postgres:13
-    env_file: .env
+    env_file: ../.env
     volumes:
-      - pg:/var/lib/postgresql/data
+      - pg_video_host:/var/lib/postgresql/data
     ports:
       - "5433:5432"
