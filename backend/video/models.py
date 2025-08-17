@@ -38,6 +38,7 @@ class Video(models.Model):
     class Meta:
         ordering = ('name',)
         verbose_name = 'Видео'
+        verbose_name_plural = 'Видео'
 
     def __str__(self):
         return self.name
@@ -68,6 +69,7 @@ class VideoFile(models.Model):
     class Meta:
         ordering = ('video',)
         verbose_name = 'Видео файл'
+        verbose_name_plural = 'Видео файлы'
 
     def __str__(self):
         return self.video
@@ -92,6 +94,8 @@ class Like(models.Model):
         constraints = [
             models.UniqueConstraint(fields=['user', 'video'], name='unique_user_video_like')
         ]
+        verbose_name = 'Лайк'
+        verbose_name_plural = 'Лайки'
 
     def __str__(self):
-        return f'Пользователь {self.user.name} поставил лайк {self.video.name}'
+        return f'Пользователь {self.user.username} поставил лайк {self.video.name}'
