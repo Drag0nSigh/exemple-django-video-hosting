@@ -83,16 +83,6 @@ class VideoViewSet(viewsets.ModelViewSet):
             permission_classes=[StaffOnlyPermission],
             url_path='statistics-subquery',
             pagination_class=None)
-    @action(detail=False,
-            methods=['get'],
-            permission_classes=[StaffOnlyPermission],
-            url_path='statistics-subquery',
-            pagination_class=None)
-    @action(detail=False,
-            methods=['get'],
-            permission_classes=[StaffOnlyPermission],
-            url_path='statistics-subquery',
-            pagination_class=None)
     def statistics_subquery(self, request):
         subquery = Subquery(
             Video.objects.filter(
